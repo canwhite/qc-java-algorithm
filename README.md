@@ -1,2 +1,2 @@
 # qc-java-algorithm
-algorithm
+Algorithm Learning
