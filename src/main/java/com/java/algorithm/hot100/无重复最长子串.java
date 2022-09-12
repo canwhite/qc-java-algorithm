@@ -11,6 +11,7 @@ public class 无重复最长子串 {
         System.out.println(num);    
     }
 
+    /** 这种思路是快慢指针的一种啊 */
     public static int  lengthOfLongestSubstring(String s) {
         //维护当前最长不重复字符串
         Set<Character> set = new HashSet<>();
