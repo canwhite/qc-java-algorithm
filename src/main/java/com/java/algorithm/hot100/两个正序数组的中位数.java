@@ -2,6 +2,10 @@ package com.java.algorithm.hot100;
 
 public class 两个正序数组的中位数 {
     public static void main(String[] args) {
+        int[] nums1 = {1,3};
+        int[] nums2 = {2};      
+        double result = findMedianSortedArrays(nums1, nums2) ;
+        System.out.println(result);
         
     }
 
@@ -31,6 +35,7 @@ public class 两个正序数组的中位数 {
         }
         int midVal1 = (i + k / 2 - 1 < nums1.length) ? nums1[i + k / 2 - 1] : Integer.MAX_VALUE;
         int midVal2 = (j + k / 2 - 1 < nums2.length) ? nums2[j + k / 2 - 1] : Integer.MAX_VALUE;
+        //为的是往中间挪
         if(midVal1 < midVal2){
             return findKth(nums1, i + k / 2, nums2, j , k - k / 2);
         }else{
