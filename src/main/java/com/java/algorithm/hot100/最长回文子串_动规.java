@@ -3,7 +3,7 @@ package com.java.algorithm.hot100;
  * 所谓回文，就是正念和反念都一样
  * 上海自来水来自海上
  */
-public class 最长回文子串 {
+public class 最长回文子串_动规 {
     public static void main(String[] args) {
         
     }
@@ -13,13 +13,12 @@ public class 最长回文子串 {
      * 2.双指针法，另外一题，无重复最长子串，用得也是双指针法
      */
     public static String longestPalindrome(String s) {
-
-
+        
+        
 
 
 
         return "";
-
     }
 
 
