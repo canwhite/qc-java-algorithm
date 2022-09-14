@@ -25,11 +25,12 @@ public class 正则表达式匹配 {
     /** s是正常字符串，p是正则语句 */
     public static boolean isMatch(String s, String p) {
         
+        //如果p的length为0，这时候如果s也为0，明显是匹配的，如果s不为0，那就是不匹配
         if(p.length() ==0) return s.length() ==0;
         
         char[] ss = s.toCharArray();
         char[] pp = p.toCharArray();
-        System.out.println(pp.length);
+        // System.out.println(pp.length);
         //头部匹配
         boolean first_match = ss.length !=0 && (ss[0] == pp[0] || pp[0] == '.');
         //如果正则字符串长度大于2，且第二个字符是*
