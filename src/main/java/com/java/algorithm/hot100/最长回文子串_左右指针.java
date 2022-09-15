@@ -1,5 +1,5 @@
 package com.java.algorithm.hot100;
-public class 最长回文子串_双指针 {
+public class 最长回文子串_左右指针 {
 
     /**
      * 首先确定回文串，就是找中心然后想两边扩散看是不是对称的就可以了。

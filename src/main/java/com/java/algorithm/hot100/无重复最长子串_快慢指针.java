@@ -3,7 +3,7 @@ package com.java.algorithm.hot100;
 import java.util.HashSet;
 import java.util.Set;
 
-public class 无重复最长子串 {
+public class 无重复最长子串_快慢指针 {
 
     public static void main(String[] args) {
         String s =  "abcabcbb";
