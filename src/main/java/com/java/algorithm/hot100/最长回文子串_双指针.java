@@ -1,13 +1,5 @@
 package com.java.algorithm.hot100;
-
-import javax.swing.plaf.synth.SynthPasswordFieldUI;
-
 public class 最长回文子串_双指针 {
-
-    static private int left = 0;
-    static private int right = 0;
-    static private int maxLength = 0;
-
 
     /**
      * 首先确定回文串，就是找中心然后想两边扩散看是不是对称的就可以了。
