@@ -69,6 +69,7 @@ public class 电话号码的字母组合_回溯 {
         }
         //str表示当前num对应的字符串
         //为什么一个char Index要减去'0'变int
+        //先确定每一层也就是for循环走啥？然后再看纵向是什么决定了到下一层，给到参数方便递归
         String str = numStrings[digits.charAt(num)-'0'];
         for(int i = 0; i< str.length();i++){
             //(1)操作
