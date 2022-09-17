@@ -34,7 +34,9 @@ public class 电话号码的字母组合_回溯 {
 
     
     public static void main(String[] args) {
-        
+        letterCombinations("23");
+        System.out.println(list.toString());
+
     }
 
     public static List<String> letterCombinations(String digits) {
