@@ -6,6 +6,9 @@ import java.util.PriorityQueue;
 public class 合并k个升序链表 {
     public static void main(String[] args) {
         //先创建三个链表，然后将三个链表转化为数组，传进去，输出结果
+        //通过数组创建链表
+        
+
 
 
         
