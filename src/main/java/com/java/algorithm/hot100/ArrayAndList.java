@@ -39,16 +39,13 @@ public class ArrayAndList {
          *  3.string是length方法
          */
 
-
-
-        
-
-
-    
-
-
-
-        
+            /** new ArrayList可以接收两种参数
+             * 一个是数量，可以先确定大小
+             * 一个是Collection，可以根据集合顺序新建list
+             * 再进一步思考一下，Array好像也是这样，针对第二项，int[]{字面量},区别于参数传入
+             */
+            // ans.add(new ArrayList<>(list));
+   
 
     }
     
