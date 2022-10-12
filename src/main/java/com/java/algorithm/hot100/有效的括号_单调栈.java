@@ -2,7 +2,7 @@ package com.java.algorithm.hot100;
 
 import java.util.Stack;
 
-public class 有效的括号 {
+public class 有效的括号_单调栈 {
     public static void main(String[] args) {
         String s = "()"; 
         System.out.println(isValid(s)); 
