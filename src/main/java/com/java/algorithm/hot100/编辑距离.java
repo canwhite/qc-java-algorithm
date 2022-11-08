@@ -53,9 +53,12 @@ public class 编辑距离 {
 
         for (int i = 1; i <= len1; i++) {
             for (int j = 1; j <= len2; j++) {
+                //若当前字母相同
                 if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j - 1];
-                } else {
+                } 
+                //增删改
+                else {
                     dp[i][j] = 1 + Math.min(Math.min(dp[i - 1][j], dp[i][j - 1]), dp[i - 1][j - 1]);
                 }
             }
