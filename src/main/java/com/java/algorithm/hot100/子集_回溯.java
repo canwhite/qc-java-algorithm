@@ -3,7 +3,7 @@ package com.java.algorithm.hot100;
 import java.util.ArrayList;
 import java.util.List;
 
-public class 子集 {
+public class 子集_回溯 {
 
     //用来收集最终结果
     static List<List<Integer>> res = new ArrayList<>();
