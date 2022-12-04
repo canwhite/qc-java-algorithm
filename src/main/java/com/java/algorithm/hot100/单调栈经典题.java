@@ -77,9 +77,11 @@ public class 单调栈经典题 {
 
         for (int index = 0; index < input.length; index++) {
             //java没有(item,index)=>{} 用这种方式取代
-            int num = input[index];
+            int item = input[index];
             //整体来说push了一遍又pop掉，当然pop是发生在对比命中的时候
-            while(stack.size() > 0 && input[(int) stack.peek()] < num){
+            //这里比较的部分也是根据业务需求判断的
+            //找右侧较大的值
+            while(!stack.isEmpty() && input[(int) stack.peek()] < item){
                 int x = (int)stack.pop(); //
                 System.out.println("pop:"+ x);
                 ans[x] = index -x;
@@ -91,6 +93,5 @@ public class 单调栈经典题 {
         return ans;
     }
 
-    
     
 }
