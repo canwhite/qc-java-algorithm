@@ -29,6 +29,7 @@ public class 最大矩型 {
         */
 
 
+
     }
     
     public static int maximalRectangle(char[][] matrix) {
@@ -56,7 +57,7 @@ public class 最大矩型 {
             //求和
             ans = Math.max(ans, largestRectangleArea(heights));
         }
-        
+
         //返回结果
         return ans;
     }
@@ -84,7 +85,4 @@ public class 最大矩型 {
         }
         return res;
     }
-
-
-
 }
