@@ -28,7 +28,6 @@ public class 单调栈经典题 {
 
         /*
          * 给一个数组，返回一个大小相同的数组。
-         * 返回的数组的第 i 个位置的值应当是，
          * 对于原数组中的第 i 个元素，至少往右走多少步，才能遇到一个比自己大的元素，
          * 如果之后没有比自己大的元素，或者已经是最后一个元素，则在返回数组的对应位置放上 -1。
          * 输入  [5,3,1,2,4]
@@ -78,10 +77,11 @@ public class 单调栈经典题 {
         for (int index = 0; index < input.length; index++) {
             //java没有(item,index)=>{} 用这种方式取代
             int item = input[index];
-            //整体来说push了一遍又pop掉，当然pop是发生在对比命中的时候
-            //这里比较的部分也是根据业务需求判断的
-            //找右侧较大的值
-            while(!stack.isEmpty() && input[(int) stack.peek()] < item){
+            //如果item大于栈顶值，我们就将栈顶弹出，大数下沉，单调递增栈
+            //那我们什么时候用单调递增栈，什么时候用单调递减栈呢？
+            //如果是为了找大数，就用单调递增栈，让大数下沉
+            //如果是为了找小数，就用单调递减栈，让小数下沉
+            while(!stack.isEmpty() && item > input[(int) stack.peek()] ){
                 int x = (int)stack.pop(); //
                 System.out.println("pop:"+ x);
                 ans[x] = index -x;

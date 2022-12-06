@@ -40,7 +40,7 @@ public class 柱状图最大的矩形_单调栈 {
     //
     public static int largestRectangleArea(int[] heights) {
 
-        int ans = 0; //预置一个结果集
+        int area = 0; //预置一个结果集
 
         //这里为了代码简便，在柱体的数组的头和尾加了两个高度为0的柱体
         int[] tmp = new int[heights.length+2];
@@ -51,35 +51,19 @@ public class 柱状图最大的矩形_单调栈 {
 
         for (int i = 0; i < tmp.length; i++) {
             int item = tmp[i]; //(item,index)=>{}
-            //栈顶比较大的
-            while(!stack.isEmpty() && tmp[stack.peek()] > item){
-
+            //如果item比栈顶元素小，就弹出栈顶元素，让小数下沉，就得到一个
+            //单调递减栈
+            while(!stack.isEmpty() && item < tmp[stack.peek()]  ){
+                //然后这里pop是为了方便
+                int x = stack.pop();
+                //然后就是业务操作
+                int h = tmp[x];
+                area = Math.max(area, (i-stack.peek()-1) *h);
             }
-
-
-
-
-
-
-            
+            //这里入栈
+            stack.push(i);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-        return 0;
-
+        return area;
     }
-
-
-
 
 }
