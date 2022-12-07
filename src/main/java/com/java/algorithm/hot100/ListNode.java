@@ -1,6 +1,5 @@
 package com.java.algorithm.hot100;
 
-
 /** 
  * 通用listNode节点，其他部分都用这个
  */
