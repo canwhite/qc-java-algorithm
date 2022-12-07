@@ -27,37 +27,50 @@ public class 最大矩型 {
         第四层柱状图的高度["4","0","0","3","0"]，最大面积为4；
         
         */
+        char[][] matrix = new char[][]{
+            {
+                '1' , '0'  , '1' ,  '0', '0' 
+            },
+            {
+                '1' , '0'  , '1'  , '1'  , '1'
+            },
+            {
+                '1'  , '1'  ,  '1'  ,  '1'  ,  '1'
+            },
+            {
+                '1'  , '0'  ,  '0'  ,  '1'  ,  '1'
+            }
+        };
 
+        int n =  maximalRectangle(matrix);
+        System.out.println("n:"+n);
 
 
     }
     
     public static int maximalRectangle(char[][] matrix) {
         //如果行或者列为0，则返回为0
-        if(matrix.length ==0 || matrix[0].length ==0){
+        if (matrix.length == 0 || matrix[0].length == 0) {
             return 0;
         }
         //得到行列
         int row = matrix.length;
         int col = matrix[0].length;
-
         //维系一个一维的数组
-        int[] heights = new int[row];
+        int[] heights = new int[col]; //这个是一个数组
         int ans = 0; //维护一个结果集
 
         //双层for循环
-        for(int i = 0; i < row;i++){
-            for(int j = 0; j< col; j++){
+        for (int i = 0; i <row; i++) {
+            for (int j = 0; j < col; j++) {
                 if (matrix[i][j] == '1') {
                     heights[j] += 1;
                 } else {
                     heights[j] = 0;
                 }
             }
-            //求和
             ans = Math.max(ans, largestRectangleArea(heights));
         }
-
         //返回结果
         return ans;
     }
@@ -72,12 +85,14 @@ public class 最大矩型 {
         int res = 0;
         Deque<Integer> stack = new ArrayDeque<>();
         int[] new_heights = new int[heights.length + 2];
+        //初始化过程
         for (int i = 1; i < heights.length + 1; i++) {
             new_heights[i] = heights[i - 1];
         }
         ;
         for (int i = 0; i < new_heights.length; i++) {
-            while (!stack.isEmpty() && new_heights[stack.peek()] > new_heights[i]) {
+            int item = new_heights[i];
+            while (!stack.isEmpty() && item < new_heights[stack.peek()]) {
                 int cur = stack.pop();
                 res = Math.max(res, (i - stack.peek() - 1) * new_heights[cur]);
             }
