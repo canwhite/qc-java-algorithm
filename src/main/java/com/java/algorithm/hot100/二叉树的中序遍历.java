@@ -27,12 +27,7 @@
             root.right.right = new TreeNode(4);
 
             List<Integer> list =  inorderTraversal(root);
-            /** 
-            list.stream().forEach(item->{
-                System.out.println(item); //输出5，1，3，2，4
-            });
-            */
-
+            System.out.println(list.toString()); //转化成字符串
         }
 
 
