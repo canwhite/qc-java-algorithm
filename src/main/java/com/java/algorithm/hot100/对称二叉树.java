@@ -26,9 +26,9 @@ public class 对称二叉树 {
     }
 
     //新的排序方法
+
     
-    
-    
+
     //如果我再写个方法
     //先转list再重新排序
     public static List<Integer> inorderTraversal(TreeNode root) {
