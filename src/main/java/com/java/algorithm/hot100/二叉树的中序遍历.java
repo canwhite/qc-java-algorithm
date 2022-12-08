@@ -8,7 +8,7 @@
         
         public static void main(String[] args) {
             //这里前中后是根的位置
-            //前序(根左右)，中序(左根右)，后序(左右根)
+            //前序(根左右)，中序(左子树 -> 根 ->右子树)，后序(左右根)
 
 
             /**********************************************
@@ -22,13 +22,16 @@
             //先搞一个验证吧
             TreeNode root = new TreeNode(1);
             root.right = new TreeNode(2);
+            root.left = new TreeNode(5);
             root.right.left = new TreeNode(3);
-            root.right.left.right = new TreeNode(4);
+            root.right.right = new TreeNode(4);
 
             List<Integer> list =  inorderTraversal(root);
+            /** 
             list.stream().forEach(item->{
-                System.out.println(item);
+                System.out.println(item); //输出5，1，3，2，4
             });
+            */
 
         }
 
@@ -41,14 +44,17 @@
             while (cur != null || !stack.isEmpty()) {
                 //先将左侧遍历完
                 if (cur != null) {
-                    stack.push(cur);
-                    cur = cur.left;
+                    //以当前例子来说，push 1，push5
+                    System.out.println("push"+cur.val);
+                    stack.push(cur); 
+                    cur = cur.left;//然后5的left是null
                 } 
                 //然后再看中间和右边
                 else {
-                    cur = stack.pop();
-                    list.add(cur.val);
-                    cur = cur.right;
+                    cur = stack.pop(); //pop5
+                    System.out.println("pop" +cur.val);
+                    list.add(cur.val);//将5入栈
+                    cur = cur.right;//然后5的right也是null，下拨在pop1
                 }
             }
             //返回列表
