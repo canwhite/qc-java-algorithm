@@ -34,6 +34,8 @@ public class BaseType {
         //数组没被重写toString继承自Object的toString
         Integer[] array = new Integer[]{1,2,3};
         System.out.println(array.toString());
+        //但是Arrays工具类上，重写的有，我们可以使用Arrays.toString来实现这一效果
+        System.out.println(Arrays.toString(array));
         Arrays.stream(array).forEach(item->{
             System.out.println(item);
         });
