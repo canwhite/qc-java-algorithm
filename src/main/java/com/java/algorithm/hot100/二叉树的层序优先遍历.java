@@ -45,7 +45,9 @@ public class 二叉树的层序优先遍历 {
         que.offer(node);
         while(!que.isEmpty()){
             List<Integer> itemList = new ArrayList<>();
-            int len = que.size();
+            int len = que.size();//这个len记录的是每一层的值，而不是一个变化的值
+            //这是为了把一层
+            //用一个最简单的实例结构去思考，1，2，3
             while(len > 0){
                 TreeNode tmpNode = que.poll();
                 itemList.add(tmpNode.val);
