@@ -50,8 +50,8 @@ public class BaseType {
          */
 
 
-         Integer n1 = new Integer(1);
-         Integer n2 = new Integer(2);
+         Integer n1 = 1;
+         Integer n2 = 2;
          System.out.println(n1.equals(n2));
 
 
