@@ -59,19 +59,15 @@ public class 前序和中序遍历序列构造二叉树 {
                 //这里边中序的很好理解
                 //考虑一个问题，pre除了root放前，然后左右，排除index = 0；截取的长度和inorder是一致的，只是位置往后挪动了一位而已
                 int[] inOrderLeft = Arrays.copyOfRange(inorder,0,i);
-                
-                //分割点去掉，起始位置，加上中左的长度，length相对下标来说，是取不到最后一个值的，
-                //另外终点值都是依靠
-                int[] preOrderLeft = Arrays.copyOfRange(preorder, 1, 1 + inOrderLeft.length);
-                root.left = buildTree(preOrderLeft,inOrderLeft);
-
-
-                
-                //右边的计算
                 int[] inOrderRight = Arrays.copyOfRange(inorder,i+1 , inorder.length);
-                //然后剩下的部分,需要确定起始位置,然后起始位置的基础上加上右边长度
+            
+                //然后在中序的长度基础上再去切前序的数据
+                //第一个已用的切分点一定是去掉的，然后左侧应该和左侧长度相同，右侧和右侧长度相同
+                int[] preOrderLeft = Arrays.copyOfRange(preorder, 1, 1 + inOrderLeft.length);
                 int[] preOrderRight = Arrays.copyOfRange(preorder,1 + inOrderLeft.length, 1 + inOrderLeft.length + inOrderRight.length);
-                
+
+                //最后在新的基础上递归
+                root.left = buildTree(preOrderLeft,inOrderLeft);
                 root.right=buildTree(preOrderRight,inOrderRight);
                 break;
             }
